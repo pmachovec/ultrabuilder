@@ -1,7 +1,8 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.3.41"
+    id("githooker").version("0.1.1")
+    kotlin("jvm").version("1.3.41")
 }
 
 group = "com.pmachovec"
@@ -13,4 +14,9 @@ repositories {
 
 tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = JavaVersion.VERSION_12.toString()
+}
+
+githooker {
+    hooksPath = "hooks"
+    triggerTaskName = "classes"
 }
