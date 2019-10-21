@@ -21,7 +21,11 @@ repositories {
 dependencies {
     // implementation(gradleApi()) // Added automatically by the java-gradle-plugin
     implementation(kotlin("stdlib"))
+
+    testImplementation("org.powermock", "powermock-api-mockito2", "2.0.2")
+    testImplementation("org.powermock", "powermock-module-testng", "2.0.2")
     testImplementation("org.testng", "testng", "7.0.0")
+
     runtime(files(sourceSets["main"].output.resourcesDir))
 }
 
@@ -78,5 +82,10 @@ tasks.withType<Test> {
     testLogging {
         displayGranularity = 4 // Prints only method names with package path
         events(TestLogEvent.PASSED, TestLogEvent.FAILED, TestLogEvent.SKIPPED)
+    }
+
+    useTestNG {
+        suites("src/test/resources/testng.xml")
+        useDefaultListeners = true // Generates TestNG reports instead of Gradle reports
     }
 }
