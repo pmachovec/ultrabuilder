@@ -53,22 +53,6 @@ class UltraBuilderTest : PowerMockTestCase() {
 
     @Test(
         dependsOnMethods = ["pluginNotNullTest"],
-        description = "Task forceBuild available expected"
-    )
-    fun forceBuildTaskAvailableTest() {
-        taskAvailableTest(UltraBuilderTaskNames.FORCEBUILD)
-    }
-
-    @Test(
-        dependsOnMethods = ["pluginNotNullTest"],
-        description = "Task forceTest available expected"
-    )
-    fun forceTestTaskAvailableTest() {
-        taskAvailableTest(UltraBuilderTaskNames.FORCETEST)
-    }
-
-    @Test(
-        dependsOnMethods = ["pluginNotNullTest"],
         description = "Task ultraBuild available expected"
     )
     fun ultraBuildTaskAvailableTest() {
@@ -81,38 +65,6 @@ class UltraBuilderTest : PowerMockTestCase() {
     )
     fun ultraTestTaskAvailableTest() {
         taskAvailableTest(UltraBuilderTaskNames.ULTRATEST)
-    }
-
-    @Test(
-        dependsOnMethods = ["pluginNotNullTest", "forceBuildTaskAvailableTest"],
-        description = "Task forceBuild, build task not available, standard output info expected once"
-    )
-    fun forceBuildBuildNotAvailableTest() {
-        taskStructureTest(UltraBuilderTaskNames.FORCEBUILD, listOf(), listOf(NeededTaskNames.BUILD))
-    }
-
-    @Test(
-        dependsOnMethods = ["pluginNotNullTest", "forceBuildTaskAvailableTest"],
-        description = "Task forceBuild, build task available, forceBuild depends on build expected"
-    )
-    fun forceBuildBuildAvailableTest() {
-        taskStructureTest(UltraBuilderTaskNames.FORCEBUILD, listOf(NeededTaskNames.BUILD), listOf())
-    }
-
-    @Test(
-        dependsOnMethods = ["pluginNotNullTest", "forceTestTaskAvailableTest"],
-        description = "Task forceTest, test task not available, standard output info expected once"
-    )
-    fun forceTestTestNotAvailableTest() {
-        taskStructureTest(UltraBuilderTaskNames.FORCETEST, listOf(), listOf(NeededTaskNames.TEST))
-    }
-
-    @Test(
-        dependsOnMethods = ["pluginNotNullTest", "forceTestTaskAvailableTest"],
-        description = "Task forceTest, test task available, forceTest depends on test expected"
-    )
-    fun forceTestTestAvailableTest() {
-        taskStructureTest(UltraBuilderTaskNames.FORCETEST, listOf(NeededTaskNames.TEST), listOf())
     }
 
     @Test(

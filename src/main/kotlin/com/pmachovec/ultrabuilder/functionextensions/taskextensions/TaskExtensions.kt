@@ -12,7 +12,6 @@ fun Task.ultraBuildTaskDependsOn(project: Project, vararg neededTaskNames: Strin
         val neededTask = project.tasks.findByName(neededTaskName)
 
         if (neededTask != null) {
-            neededTask.outputs.upToDateWhen { false }
             this.dependsOn(neededTask)
 
             if (previousTask != null) {
