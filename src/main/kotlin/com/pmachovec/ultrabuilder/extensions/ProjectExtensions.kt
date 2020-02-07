@@ -1,6 +1,5 @@
-package com.pmachovec.ultrabuilder.functionextensions.projectextensions
+package com.pmachovec.ultrabuilder.extensions
 
-import com.pmachovec.ultrabuilder.functionextensions.taskextensions.ultraBuildTaskDependsOn
 import com.pmachovec.ultrabuilder.taskmodels.TaskModel
 
 import org.gradle.api.Project
