@@ -119,7 +119,7 @@ class UltraBuilderTest : PowerMockTestCase() {
         dependsOnMethods = ["pluginNotNullTest", "ultraTestTaskAvailableTest"],
         description = "Task ultraTest, test task available, cleanTest task not available, ultraTest depends on test expected, standard output info expected once"
     )
-    fun ultraTestTestAvailableCleanUnavailableTest() {
+    fun ultraTestAvailableCleanUnavailableTest() {
         taskStructureTest(UltraBuilderTaskNames.ULTRATEST, listOf(NeededTaskNames.TEST), listOf(NeededTaskNames.CLEANTEST))
     }
 
@@ -137,14 +137,14 @@ class UltraBuilderTest : PowerMockTestCase() {
     }
 
     private fun taskStructureTest(taskName: String, availableTaskNames: List<String>, missingTaskNames: List<String>) {
-        project = ProjectBuilder.builder().build()
-
         availableTaskNames.forEach {
             project.task(it)
         }
 
         project.pluginManager.apply(UltraBuilder::class.java)
-        val ultraBuilderTask = project.tasks.findByName(taskName)
+        val ultraBuilderTaskSet = project.getTasksByName(taskName, false)
+        assertEquals(1, ultraBuilderTaskSet.size)
+        val ultraBuilderTask = ultraBuilderTaskSet.toList()[0]
         val ultraBuilderTaskDependencies = ultraBuilderTask!!.taskDependencies.getDependencies(ultraBuilderTask)
         assertEquals(ultraBuilderTaskDependencies.size, availableTaskNames.size)
 

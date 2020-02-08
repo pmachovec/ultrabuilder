@@ -1,7 +1,7 @@
 package com.pmachovec.ultrabuilder
 
 import com.pmachovec.ultrabuilder.constants.NeededTaskNames
-import com.pmachovec.ultrabuilder.functionextensions.projectextensions.ultraBuilderTask
+import com.pmachovec.ultrabuilder.extensions.ultraBuilderTask
 import com.pmachovec.ultrabuilder.taskmodels.UltraBuild
 import com.pmachovec.ultrabuilder.taskmodels.UltraTest
 
