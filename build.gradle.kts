@@ -6,12 +6,12 @@ plugins {
     `java-gradle-plugin`
     `maven-publish`
     kotlin("jvm").version("1.3.60")
-    id("com.pmachovec.githooker").version("1.0.1")
+    id("com.pmachovec.githooker").version("1.0.2")
     id("org.jlleitschuh.gradle.ktlint").version("9.0.0")
 }
 
 group = "com.pmachovec"
-version = "1.1"
+version = "1.1.1"
 
 // REPOSITORIES AND DEPENDENCIES
 repositories {
@@ -45,7 +45,7 @@ publishing {
             project.properties["repoUrl"]?.let { url = uri(it) }
 
             credentials {
-                project.properties["userName"]?.let { username = it.toString() }
+                username = "." // Doesn't have to be a real user name
                 project.properties["token"]?.let { password = it.toString() }
             }
         }

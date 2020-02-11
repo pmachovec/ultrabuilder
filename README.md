@@ -1,4 +1,4 @@
-# Ultrabuilder 1.1
+# Ultrabuilder 1.1.1
 Gradle plugin for application builds including cleaning to be triggered by one command. Useful especially when running such builds from an IDE.
 
 ### Prerequisities
@@ -21,7 +21,7 @@ pluginManagement {
 ```
 plugins {
     ...
-    id("com.pmachovec.ultrabuilder").version("1.1")
+    id("com.pmachovec.ultrabuilder").version("1.1.1")
     ...
 }
 ```
@@ -30,6 +30,12 @@ plugins {
     - **ultraTest** - group _verification_, runs _cleanTest_ and _test_ tasks
 
 ### Release track
+**1.1.1**
+* user name omitted for package repository publication configuration
+* no new functionality
+
+<br/>
+
 **1.1**
 * fixed not detecting Java plugin tasks
-* ready for publishing to GitHub package repository
+* ready for publishing to a package repository
