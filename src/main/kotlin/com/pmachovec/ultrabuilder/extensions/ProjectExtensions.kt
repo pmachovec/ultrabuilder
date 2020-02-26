@@ -1,7 +1,6 @@
 package com.pmachovec.ultrabuilder.extensions
 
 import com.pmachovec.ultrabuilder.taskmodels.TaskModel
-
 import org.gradle.api.Project
 import org.gradle.api.Task
 

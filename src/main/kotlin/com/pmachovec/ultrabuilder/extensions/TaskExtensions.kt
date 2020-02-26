@@ -1,7 +1,6 @@
 package com.pmachovec.ultrabuilder.extensions
 
 import com.pmachovec.ultrabuilder.constants.Texts
-
 import org.gradle.api.Project
 import org.gradle.api.Task
 
