@@ -4,7 +4,6 @@ import com.pmachovec.ultrabuilder.constants.NeededTaskNames
 import com.pmachovec.ultrabuilder.extensions.ultraBuilderTask
 import com.pmachovec.ultrabuilder.taskmodels.UltraBuild
 import com.pmachovec.ultrabuilder.taskmodels.UltraTest
-
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 

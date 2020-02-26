@@ -3,22 +3,17 @@ package com.pmachovec.ultrabuilder
 import com.pmachovec.ultrabuilder.constants.NeededTaskNames
 import com.pmachovec.ultrabuilder.constants.Texts
 import com.pmachovec.ultrabuilder.constants.UltraBuilderTaskNames
-
 import java.io.ByteArrayOutputStream
 import java.io.PrintStream
-
 import org.gradle.api.Project
 import org.gradle.testfixtures.ProjectBuilder
 import org.powermock.modules.testng.PowerMockTestCase
-import org.testng.Assert.assertNotNull
+import org.testng.Assert.* // ktlint-disable
 import org.testng.annotations.AfterClass
 import org.testng.annotations.AfterMethod
 import org.testng.annotations.BeforeClass
 import org.testng.annotations.BeforeMethod
 import org.testng.annotations.Test
-import org.testng.Assert.assertEquals
-import org.testng.Assert.assertNotEquals
-import org.testng.Assert.assertTrue
 
 class UltraBuilderTest : PowerMockTestCase() {
     private val testConsole = ByteArrayOutputStream()

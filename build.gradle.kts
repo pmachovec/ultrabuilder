@@ -6,7 +6,7 @@ plugins {
     `java-gradle-plugin`
     `maven-publish`
     kotlin("jvm").version("1.3.60")
-    id("com.pmachovec.githooker").version("1.0.2")
+    id("com.pmachovec.githooker").version("1.0.4")
     id("org.jlleitschuh.gradle.ktlint").version("9.0.0")
 }
 
@@ -66,7 +66,6 @@ githooker {
 }
 
 ktlint {
-    disabledRules.add("import-ordering")
     verbose.set(true)
 }
 
