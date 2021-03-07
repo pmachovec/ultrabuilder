@@ -5,13 +5,12 @@ plugins {
     idea
     `java-gradle-plugin`
     `maven-publish`
-    kotlin("jvm").version("1.3.60")
-    id("com.pmachovec.githooker").version("1.0.4")
+    kotlin("jvm").version("1.4.30")
     id("org.jlleitschuh.gradle.ktlint").version("9.0.0")
 }
 
 group = "com.pmachovec"
-version = "1.1.2"
+version = "1.2"
 
 // REPOSITORIES AND DEPENDENCIES
 repositories {
@@ -60,13 +59,12 @@ idea {
     }
 }
 
-githooker {
-    hooksPath = "hooks"
-    triggerTaskName = "classes"
-}
-
 ktlint {
     verbose.set(true)
+}
+
+tasks.compileJava {
+    targetCompatibility = JavaVersion.VERSION_1_8.toString()
 }
 
 tasks.compileTestKotlin {
@@ -74,7 +72,7 @@ tasks.compileTestKotlin {
 }
 
 tasks.withType<KotlinCompile> {
-    kotlinOptions.jvmTarget = JavaVersion.VERSION_12.toString()
+    kotlinOptions.jvmTarget = JavaVersion.VERSION_1_8.toString()
 }
 
 tasks.withType<Test> {
